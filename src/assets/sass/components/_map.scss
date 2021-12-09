@@ -1,0 +1,22 @@
+.places{
+ 
+}
+
+.place {
+	align-items: 'center';
+	background: #5e6264;
+	border-radius: 4px;
+	color: #fff;
+    cursor: initial;
+    font-size: 1.3rem;
+	display: inline-flex;
+	justify-content: 'center';
+	margin: 5px 10px 5px 0;
+    padding: 3px 7px;
+
+    .cancel{
+        cursor: pointer;
+        display: inline-block;
+        margin-left: 7px;
+    }
+}

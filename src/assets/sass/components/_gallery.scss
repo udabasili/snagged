@@ -1,0 +1,72 @@
+.gallery{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: full-start / full-end;
+    justify-content: center;
+
+    &__preview{
+        margin: 3rem 0;
+        &--list{
+            display: flex;
+            cursor: pointer;
+
+            .selected{
+                outline-offset: 10px;
+                outline: 8px solid black;
+            }
+
+        }
+
+        &--item{
+            width: 10rem;
+            height: 10rem;
+            margin: 1rem;
+            border: 2px solid black;
+            overflow: hidden;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    &__selected-image{
+        width: 50vw;
+        height: 70vh;
+
+        @include response(tab-port){
+            width: 80vw;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.swiper-container {
+    width: 618px;
+    height: 80vh;
+    grid-column: full-start / full-end;
+    margin: auto ;
+
+        @include response(tab-port){
+                width: 100%;
+
+        }
+
+    }
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+
+}

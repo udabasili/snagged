@@ -1,0 +1,54 @@
+.startup{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+        height: 100vh;
+
+    &__content{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        
+    }
+
+    &__text{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        font-size: 12em;
+        top: 50%;
+        font-weight: bolder;
+        left: 50%;
+
+        @include response(tab-port){
+            font-size: 7rem;
+
+        }
+
+        @include response(phone){
+            font-size: 5rem;
+        }
+
+        
+
+        &:nth-child(1) {
+            color: transparent;
+            -webkit-text-stroke: 4px $color-secondary ;
+            
+        }
+
+        &:nth-child(2) {
+            color: $color-secondary;
+            animation:  wave 1.2s ease-in-out infinite;
+            
+        }
+    }
+}
+
+
+
+
+
+
+

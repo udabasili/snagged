@@ -1,0 +1,61 @@
+.search-page{
+    grid-column: full-start / full-end;
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+    grid-template-columns: inherit;
+    background-color: rgb(247, 246, 236);
+}
+
+.search{
+    grid-column: full-start / full-end;
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+    margin: 25rem 0;
+
+    grid-template-columns: inherit;
+    grid-template-rows: 10rem max-content;
+    row-gap: 2rem;
+    column-gap: 2rem;
+
+    @include response(tab-port){
+        column-gap: unset;
+
+    }
+}
+
+.card-list.grid{
+    all: unset;
+    grid-column: center-start / center-end;
+    grid-row:  2 / 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
+    column-gap: 3rem;
+    row-gap: 5rem;
+    margin-bottom: 10rem;
+
+    @include response(tab-port){
+        grid-column: full-start / full-end ;
+        grid-row: unset;
+
+    }
+
+    @include response(phone){
+
+        grid-auto-flow: unset;
+    }
+
+    
+}
+
+.card-list.flex{
+    all: unset;
+     grid-column: center-start / center-end;
+    display: flex;
+    flex-direction: column;
+
+    @include response(phone){
+        grid-column: full-start / full-end ;
+    }
+}

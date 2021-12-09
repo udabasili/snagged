@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: system-ui, sans-serif;
+   @include response(mobile){
+        font-size: 50%;
+    }
+
+    @include response(tab-port) {
+        font-size: 50%;
+    }
+    @include response(tab-land) {
+        font-size: 50%;
+    }
+}
+
+main{
+    box-sizing: border-box;
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.678);
+    display: grid;
+    position: relative;
+    background-color: #f7f6ec;
+    width: 100%;
+    grid-template-columns: [full-start] minmax(4rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] minmax(4rem, 1fr) [full-end];
+    grid-template-rows: 10vh 10vh minmax(max-content, 1fr) 20vh;
+
+    @include response(phone){
+        grid-template-columns: [full-start] 1fr [center-start] repeat(8, [col-start] 1fr [col-end]) [center-end] 1fr [full-end];
+
+    }
+
+    @include response(tab-port){
+        grid-template-columns: [full-start] minmax(9%, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 9%) [col-end]) [center-end] minmax(9%, 1fr) [full-end];
+
+    }
+}
+
+.Toastify__toast-container{
+    font-size: 1.2rem;
+}
+

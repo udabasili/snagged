@@ -1,0 +1,9 @@
+.Toastify{
+    position: fixed;
+    z-index: 40;
+
+    &__toast-body{
+        font-size: 2rem;
+        text-align: center;
+    }
+}

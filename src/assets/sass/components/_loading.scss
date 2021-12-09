@@ -1,0 +1,61 @@
+.loading{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.267);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__icon{
+        width: 9rem;
+        height: 9rem;
+        background-color: $color-secondary;
+        border-radius: 50%;
+        animation: pulse .8s linear infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    &__indicator{
+        width: 7rem;
+        height: 7rem;
+        top: 50%;
+        left: 50%;
+        position: relative;
+        border-radius: 50%;
+        border: 4rem solid white;
+        border-bottom: 4rem solid $color-secondary;
+        animation: loader .8s linear infinite;
+    }
+}
+
+
+
+
+.heart{
+    -webkit-animation: heartBeat .8s infinite;
+            animation: heartBeat .8s infinite;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+        -webkit-transform: scale(2);
+                transform: scale(2);
+}
+@-webkit-keyframes heartBeat{
+    50%{
+        -webkit-transform: scale(0.4);
+                transform: scale(0.4);
+    }
+}
+@keyframes heartBeat{
+    50%{
+        -webkit-transform: scale(0.4);
+                transform: scale(0.4);
+    }
+}

@@ -1,0 +1,292 @@
+.navigation{
+    display: flex;
+    background-color: $color-primary;
+    align-items: center;
+    grid-column: full-start /full-end;
+    height: 10vh;
+
+    &__checkbox{
+        display: none;
+    }
+
+    &__button{
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: $box-shadow;
+        text-align: center;
+        z-index: 50;
+
+        @include response(tab-port){
+            display: inline-block;
+            height: 6rem;
+            width: 6rem;
+            top: 1rem;
+            right: 2rem;
+        }
+
+        @include response(phone){
+            display: inline-block;
+            height: 4rem;
+            width: 4rem;
+            top: 2.5rem;
+            right: 2rem;
+            
+        }
+    }
+
+    &__button:hover{
+        background-color: $color-primary-light;
+    }
+
+    &__icon{
+        position: relative;
+
+        @include response(tab-port){
+            margin-top: 3rem;
+        }
+
+        @include response(phone){
+            margin-top: 2rem;
+
+        }
+
+        &,
+        &::before,
+        &::after{
+
+            @include response(tab-port){
+                width: 3rem;
+                height: 3px;
+                display: inline-block;
+
+            }
+            
+            @include response(phone){
+                width: 2rem;
+                height: 2px;
+                display: inline-block;
+
+            }
+
+            
+            width: 2rem;
+            height: 2px;
+            background-color: black;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after{
+            position: absolute;
+            content: ' ';
+            left: 0;
+        }
+
+        &::before{
+            top: -.6rem;
+            @include response(phone){
+                top: -.4rem;
+            }
+        }
+
+        &::after{
+            top: .6rem;
+            @include response(phone){
+                top: .4rem;
+            }
+        }
+    }
+
+   
+
+    &__logo{
+        flex: 1 1 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        @include response(tab-port){
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .app{
+            font-size: 5rem;
+            font-weight: bolder;
+            margin: 0 2rem;
+
+
+            @include response(phone){
+                font-size: 3.5rem;
+            }
+
+
+        &:nth-child(1) {
+            color: white;
+            
+        }
+
+        &:nth-child(2) {
+            color: $color-primary-light;
+            clip-path: polygon(0% 47%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+
+            
+        }
+
+        }
+    }
+
+    &__nav{
+        flex: 1 1 60%;
+        position: relative;
+        background-color: $color-primary;
+        display: flex;
+
+        @include response(tab-port){
+            position: fixed;
+            overflow: hidden;
+            background-color: white;
+            flex: unset;
+            left: 0;
+            height: 100%;
+            top: 0;
+            width: 0;
+            opacity: 0;
+            z-index: 40;
+        }
+        
+    }
+
+   
+
+    &__checkbox:checked ~ &__button{
+        background-color: $color-primary;
+    }
+
+    &__checkbox:checked + &__button &__icon{
+        &{
+            background-color: transparent;
+        }
+        &::before{
+                top: 0rem;
+                transform: rotate(135deg);
+            
+        }
+
+        &::after{
+
+            top: 0rem;
+            transform: rotate(-135deg)
+        }
+    }
+
+    &__checkbox:checked ~ &__nav{
+        width: 100vw;
+        opacity: 1;
+    }
+
+    &__list{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        justify-content: flex-end;
+
+        @include response(tab-port){
+            position: absolute;
+            flex-direction: column;
+            left: 50%;
+            width: 100%;
+            top: 50%;
+            transform: translate( -50%, -50%);
+            text-align: center;
+            justify-content: center;
+        }
+       
+    }
+
+    &__item{
+        padding: 1rem;
+        list-style: none;
+        font-size: 2rem;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+
+    }
+
+    &__link{
+        &,
+        &:link{
+            padding: 1rem;
+            color: white;
+            
+            text-decoration: none;
+
+            @include response(tab-port){
+                font-size: 4rem;
+                color: $color-primary;
+
+            }
+
+
+        }
+
+        &:active,
+        &:hover{
+            color: black;
+            
+        }
+    }
+
+}
+.active-nav{
+    color: black;
+}
+
+.user-nav{
+    display: flex;
+    flex:  20% 0 0;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: $color-primary;
+
+    @include response(tab-port){
+        flex-basis: 30%;
+    }
+
+    &__avatar{
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid white;
+
+        @include response(phone){
+            width: 4rem;
+            height: 4rem;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__icon{
+        cursor: pointer;
+        
+        svg{
+            font-size: 3rem;
+            color: white;
+
+        }
+
+        
+    }
+}

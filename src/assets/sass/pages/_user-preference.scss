@@ -1,0 +1,167 @@
+.user-preference-page{
+    display: flex;
+    grid-column: full-start /full-end;
+    padding: 10% 0;
+    justify-content: center;
+
+    .progress{
+        width: 70%;
+        height: 3rem;
+    }
+
+    .progress::-webkit-progress-value {
+        background: $color-primary;
+        border-radius: 2px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    }
+
+
+    .progress::-moz-progress-bar {
+        background: $color-primary;
+        border-radius: 2px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    }
+
+    .progress::-moz-progress-bar {
+        color: $color-primary;
+
+    }
+}
+
+._spectrum-Slider-value_48d11{
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+}
+
+.slides{
+    width: 90%;
+    align-items: center;
+    position: relative;
+    height: 60vh;
+    margin: 3rem auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    border: 10px solid $color-primary;
+
+    .left,.right{
+        cursor: pointer;
+        color: $color-primary;
+        width: 6rem;
+        grid-row: 1;
+        height: 6rem;
+        font-size: 5rem;
+    }
+
+    .left{
+        justify-self: flex-start;
+
+    }
+
+    .right{
+        justify-self: flex-end;
+    }
+
+  
+}
+
+.slide{
+    order: 2;
+    grid-column: 1 /-1;
+    align-self: flex-start;
+    margin-top: 1.3rem;
+    grid-row: 2;
+    .form{
+        width: 100%;
+
+        &__label{
+            font-size: 3.3rem;
+            text-transform: capitalize;
+            margin: 1.5rem 0;
+        }
+
+        &__options{
+            justify-self: center;
+            width: 60%;
+            margin: 1rem auto;
+        }
+
+        &__option{
+            position: relative;
+            padding-left: 40px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            text-align: left;
+            font-size: 1.9rem;
+            cursor: pointer;
+
+                input{
+                    opacity: 0;
+                }
+
+                .checkmark {
+                    position: absolute;
+                    left: 0;
+                    height: 2rem;
+                    width: 2rem;
+                    background-color: $color-primary;
+                    border-radius: 50%;
+                    
+                        &::after{
+                            display: block;
+                        }
+                }
+        }
+
+        .form-001__component{
+            float: right;
+            width: 60%;
+        }
+    }
+}
+
+
+
+
+.form__option input:checked~.checkmark:after {
+    display: block
+}
+
+.form__option .checkmark:after {
+    content: "";
+    width: .8rem;
+    height: .8rem;
+    display: block;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+
+.form__option input[type="radio"]:checked~.checkmark:after {
+    transform: translate(-50%, -50%) scale(1)
+}
+
+
+
+progress::-webkit-progress-bar {background-color: black; width: 100%;}
+progress {background-color: black;}
+
+/* value: */
+progress::-webkit-progress-value {background-color: green !important;}
+progress::-moz-progress-bar {background-color: green !important;}
+progress {color: green;}
+
+.questions-select{
+    height: 30vh;
+}
+
+.questions-option{
+    padding: 1rem 0;
+}

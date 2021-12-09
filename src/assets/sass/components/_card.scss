@@ -1,0 +1,240 @@
+.card{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 1.4rem 4rem rgba(0, 0, 0, 0.096);
+    row-gap: 2rem;
+    max-height: 50rem;
+
+    &__image{
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        width: 100%;
+        height: 30rem;
+        z-index: 1;
+    }
+
+    &__names{
+        grid-column:  1/ -1;
+        background-color: $color-primary;
+        color: white;
+        width: 100%;
+        z-index: 4;
+        justify-self: center;
+        align-self: flex-end;
+        grid-row: 1 / 2 ;
+
+        .username,
+        .name{
+            display: block;
+            text-align: center;
+        }
+
+        .username{
+            font-size: 3rem;
+            text-transform: uppercase;
+        }
+
+        .name{
+            font-size: 2rem;
+
+        }
+
+        
+    }
+
+    &__online-status{
+        grid-column:  2 / 3;
+        grid-row:  1 / 2;
+        z-index: 2;
+        justify-self: flex-end;
+        margin: 2rem;
+        font-size: 2rem;
+        color: white;
+        list-style: none;
+        height: 5rem;
+        width: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin: 1rem;
+
+    }
+
+    .online{
+        background-color: $color-primary-light;
+
+    }
+
+    .offline{
+        background-color: grey;
+
+    }
+
+    &__favorite{
+        grid-row: 1 /2;
+        grid-column: 1 /2 ;
+        z-index: 2;
+        height: 3rem;
+        margin: 2rem;
+        width: 4rem;
+
+        svg{
+            font-size: 3rem;
+            fill: gold;
+        }
+    }
+
+    &__info{
+            font-size: 1.4rem;
+            text-align: center;
+            padding: 1rem ;
+            font-weight: 600;
+        }
+    .button{
+
+        &:link,
+        &:visited{
+            grid-column: 1 / -1;
+            background-color: black;
+            text-align: center;
+            text-decoration: none;
+            font-size: 2.5rem;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            font-weight: 700;
+            color: white;
+        }
+    
+        &:active,
+        &:hover{
+       
+            color: green;
+        }
+        
+    }
+}
+
+.user-option{
+
+    &__list{
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        z-index: 2;
+        align-self: center;
+        justify-self: center;
+        width: 60%;
+        display: none;
+        justify-content: center;
+
+        @include response(tab-land){
+            display: flex;
+        }
+    }
+
+    &__item{
+        font-size: 2rem;
+        background-color:black;
+        color: white;
+        list-style: none;
+        height: 5rem;
+        width: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin: 1rem;
+        cursor: pointer;
+    }
+}
+
+.card:hover .user-option__list{
+    display: flex;
+}
+
+.card--flex{
+    background-color: white;
+    width: 70%;
+    grid-template-columns: 40% 60%;
+    margin: 2rem auto;
+
+    @include response(tab-port){
+        grid-template-columns: 50% 50%;
+        width: 100%;
+    }
+
+    .card{
+        
+
+        &__image{
+            grid-column: 1/ 2;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 1.4rem 4rem rgba(0, 0, 0, 0.096);
+            grid-row-gap: 2rem;
+            row-gap: 2rem;
+            max-height: 50rem;
+
+
+                .image{
+                    grid-column: 1/ -1;
+                    grid-row:  1  / -1;
+                    width: 100%;
+                    height: 100%;
+                }
+        }
+
+        &__detail{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background-color:$color-primary;
+            color: white;
+
+            .username{
+                grid-column: 1 / -1;
+                font-size: 4rem;
+                margin-left: 3rem;
+                font-weight: bold;
+                justify-self: flex-start;
+                text-transform: uppercase;
+
+                @include response(tab-port){
+                    margin: 0;
+                    justify-self: center;
+                }
+            }
+
+            .button{
+                grid-column: 1 / -1;
+                align-self: center;
+                width: initial;
+                justify-self: flex-end;
+                margin-right: 3rem;
+                background-color: white;
+                color: black;
+
+                
+                @include response(tab-port){
+                    margin: 0;
+                    justify-self: center;
+                }
+            }
+
+        }
+
+        &__info{
+            justify-self: flex-start;
+            margin-left: 3rem;
+            font-weight: bold;
+
+            @include response(tab-port){
+                margin: 0;
+                justify-self: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,110 @@
+.modal{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 60;
+    background-color: rgba(0, 0, 0, 0.267);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__content{
+        background-color: white;
+        height: 70vh;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 50vw;
+
+
+        @include response(tab-land){
+            width: 70vw;
+        }
+
+        @include response(phone){
+            width: 90vw;
+        }
+
+
+    }
+
+    &__header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: $color-primary;
+        height: 30%;
+        flex-direction: column;
+
+        h2{
+            color: white;
+        }
+        .close-button,
+        .ok-button{
+            position: absolute;
+            top: 10px;
+            width: 2.6rem;
+            height: 2.6rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+             svg{
+                font-size: 2rem;
+                color: white;
+            }
+
+            
+
+        }
+        .close-button{
+            left: 10px;
+            background-color: red;
+
+           
+        }
+        .ok-button{
+            right: 10px;
+            background-color: lightgreen;
+
+        }
+    
+    }
+
+    &__body{
+         display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70%;
+        width: 100%;
+        background-color: rgb(241, 237, 237);
+        position: relative;
+        flex-direction: column;
+        overflow-y: auto;
+
+        .react-tel-input{
+      
+            width: unset;
+
+            .form-control {
+             
+                height: 50px;
+                width: 400px;
+            }
+        }
+    }
+
+    &__body--loading{
+        border: 16px solid #f3f3f3; 
+        border-top: 16px solid black;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        animation: loader 1s linear infinite;
+
+    }
+}

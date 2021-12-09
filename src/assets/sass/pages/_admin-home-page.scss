@@ -1,0 +1,8 @@
+.admin{
+    grid-column:  col-start 3 / full-end;
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+    grid-template-columns: inherit;
+    background-color: rgb(247, 246, 236);
+}

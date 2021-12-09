@@ -1,0 +1,23 @@
+{
+  "hosting": {
+    "site": "snagged-bab1f",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      ".env",
+      "services-used.txt",
+      "project-note.txt"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
+
+
+	

@@ -1,0 +1,32 @@
+.user-images-upload{
+    display: grid;
+    margin: 10vh 0;
+    grid-column: full-start/ full-end;
+    justify-content: space-around;
+    grid-template-columns: inherit;
+
+    .button--submit{
+      grid-column: 1/-1;
+      width: 20rem;
+      justify-self: center;
+    }
+}
+
+.user-images{
+    display: grid;
+    grid-column: center-start/ center-end;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-template-rows: repeat(2, 40rem);
+    grid-auto-rows: 35rem;
+    row-gap: 3rem; 
+    column-gap: 1rem;
+
+    @include response(phone){
+      grid-column: full-start/ full-end;
+      grid-template-rows: repeat(auto-fit, 30rem);
+      column-gap: 2px;
+
+
+    }
+
+}

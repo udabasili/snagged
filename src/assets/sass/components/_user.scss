@@ -1,0 +1,156 @@
+.user{
+
+    &__summary{
+        grid-column: center-start / col-end 5;
+        height: max-content;
+        padding: 1.4rem;
+        margin: 7rem 0;box-shadow: 0 1.4rem 3rem rgba(0, 0, 0, .3);
+
+
+        @include response(tab-port){
+            grid-column: full-start / full-end;
+            
+        }
+
+        .content{
+            padding: 1.5rem 3rem;
+
+            .header-tertiary{
+                padding-bottom: 1rem;
+                border-bottom: 5px solid black;
+            }
+            .paragraph{
+                word-break: break-all;
+            }
+            
+        }
+
+    }
+
+    &__info{
+        grid-column: col-end 5 / center-end;
+        margin: 7rem 0;
+        box-shadow: 0 1.4rem 3rem rgba(0, 0, 0, .3);
+        position: relative;
+        overflow-y: hidden;
+        height: max-content;
+        transition: all 1s ease-in-out;
+
+
+        @include response(tab-port){
+            grid-column: full-start / full-end;
+            
+        }
+
+    }
+}
+
+.user__status{
+    &--list{
+
+    }
+
+    &--item{
+        list-style: none;
+        font-size: 2rem;
+        text-transform: capitalize;
+
+        
+        .label{
+            font-weight: bold;
+        }
+
+        .value{
+            padding-left: 1rem;
+        }
+    }
+}
+table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+    td, tr{
+        border-bottom: 1px solid #ddd;
+    }
+
+    td{
+        padding: 12px;
+    }
+
+
+    th{
+        font-weight: bold;
+        font-size: 2.4rem;
+        padding: 12px;
+        text-transform: uppercase;
+        color: white;
+        background-color: $color-primary;
+    }
+
+    tbody{
+        display: none;
+    }
+
+
+    td{
+        text-align: center;
+        font-size: 1.3rem;
+
+        @include response(tab-port){
+            font-size: 1.5rem;
+        }
+
+
+    }
+
+    td:first-child{
+        font-weight: bold;
+
+
+    }
+
+    tr:nth-child(2n ){
+       background-color: $color-primary-light; 
+    }
+}
+
+
+
+.show{
+	width: 20rem;
+	height: 5rem;
+	display: flex;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	overflow: hidden;
+    border: 2px solid green;
+    border-bottom: none;
+    
+    &__text{
+        width: 70%;
+        overflow: hidden;
+        display: flex;
+        font-size: 2rem;
+        justify-content: center;
+        font-weight: bold;
+        text-transform: capitalize;
+        align-items: center;
+
+    }
+
+    &__icon{
+        width: 30%;
+        overflow: hidden;
+        background-color:black;
+        display: flex;
+        overflow: hidden;
+        font-size: 3rem;
+        font-weight: bold;
+        color: white;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
