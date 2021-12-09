@@ -6,8 +6,7 @@ import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const GOOGLE_MAP =  'AIzaSyDeOxqblHXARo7CFztvJD7Rmh9VfNoZARU'
-//process.env.REACT_APP_GOOGLE_MAP_API
+const GOOGLE_MAP = process.env.REACT_APP_GOOGLE_MAP_API
 Geocode.setApiKey(GOOGLE_MAP);
 const AnyReactComponent = ({ text }) => (
     <div style={{
